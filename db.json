@@ -1,0 +1,83 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "code": "057/44",
+      "category": {
+        "id": 1,
+        "name": "smartWatch",
+        "description": ""
+      },
+      "brand": "Colmi",
+      "costPrice": 80,
+      "salePrice": 150,
+      "currentInventory": 5,
+      "observation": "sdfsfsdfsdfsdf"
+    },
+    {
+      "id": 2,
+      "code": "057/44",
+      "category": {
+        "id": 1,
+        "name": "smartWatch",
+        "description": ""
+      },
+      "brand": "Colmi",
+      "costPrice": 80,
+      "salePrice": 150,
+      "currentInventory": 5,
+      "observation": "sdfsfsdfsdfsdf"
+    }
+  ],
+  "shopping": [
+    {
+      "id": 1,
+      "purchaseDate": "01/02/2021",
+      "platform": {
+        "id": 1,
+        "name": "Aliexpress"
+      },
+      "storeName": "Fantacy",
+      "orderId": "01547855",
+      "product": "Fone qcy",
+      "quantity": 2,
+      "unitPrice": 80,
+      "totalPrice": 120,
+      "trackingCode": "",
+      "observation": "",
+      "status": ""
+    },
+    {
+      "purchaseDate": "2021-07-06T03:00:00.000Z",
+      "platform": {
+        "id": 1,
+        "name": "Aliexpress"
+      },
+      "storeName": "fantacye tec",
+      "orderId": "32445543",
+      "product": "Xiaomi Mi note 10",
+      "quantity": "1",
+      "unitPrice": "900",
+      "totalPrice": "900",
+      "trackingCode": "LB34354SE",
+      "observation": "Teste",
+      "id": 2
+    }
+  ],
+
+  "platform":[
+
+    { "id":1,
+       "name":"Aliexpress",
+       "url":"http://www.aliexpress.com",
+       "logoImg":"/assets/images/icon-aliexpress.png"
+
+    },
+    { "id":2,
+      "name":"Shopee",
+      "url":"https://shopee.com.br/",
+      "logoImg":"/assets/images/icon-shopee.png"
+
+   }
+   ]
+}

@@ -1,0 +1,29 @@
+<nb-tabset>
+  <nb-tab tabTitle="Produtos">
+
+
+    <nb-card>
+      <div class="row">
+
+
+        <nb-card-body>
+          <button nbButton status="success" size="large" (click)="openProductFormDialog(false)">
+            <nb-icon icon='plus-square-outline'></nb-icon>
+          </button>
+        </nb-card-body>
+      </div>
+    </nb-card>
+
+    <nb-card>
+      <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+        </ng2-smart-table>
+      </nb-card-body>
+    </nb-card>
+
+
+  </nb-tab>
+  <nb-tab tabTitle="Transações de estoque">
+
+  </nb-tab>
+</nb-tabset>

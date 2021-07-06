@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>Cadastro de Produtos</nb-card-header>
+      <nb-card-body>
+
+        <form [formGroup]="productForm">
+
+          <input type="text" nbInput placeholder="Código"
+            [status]="productForm.controls.code.touched? (productForm.controls.code.errors ?'danger' : 'basic') : 'basic' "
+            name="code" formControlName="code">
+
+          <div>
+            <input type="text" nbInput fullWidth placeholder="Descrição" name="description"
+              formControlName="description"
+              [status]="productForm.controls.description.touched? (productForm.controls.description.errors ?'danger' : 'basic') : 'basic' ">
+
+            <ng-container *ngIf="productForm.controls.description.invalid && productForm.controls.description.touched">
+              <p class="caption status-danger" *ngIf="productForm.controls.description.errors?.required">
+                Email is required!
+              </p>
+
+            </ng-container>
+
+          </div>
+
+
+          <div class="form-control-group">
+            <nb-select placeholder="Categoria" name="category" formControlName="category"
+              [status]="productForm.controls.category.touched? (productForm.controls.category.errors ?'danger' : 'basic') : 'basic' ">
+              <nb-option *ngFor="let category of categories" [value]="category"> {{ category.name }}</nb-option>
+            </nb-select>
+            <ng-container *ngIf="productForm.controls.category.invalid && productForm.controls.category.touched">
+              <p class="caption status-danger" *ngIf="productForm.controls.category.errors?.required">
+                Email is required!
+              </p>
+
+            </ng-container>
+
+
+          </div>
+
+          <div class="form-control-group">
+            <input type="text" nbInput placeholder="Marca" name="brand" formControlName="brand"
+              [status]="productForm.controls.brand.touched? (productForm.controls.brand.errors ?'danger' : 'basic') : 'basic' ">
+
+          </div>
+
+
+          <div>
+
+            <div>
+              <input nbInput type="number" min="0.00" max="10000.00" step="0.01" placeholder="Preço de Custo"
+                name="costPrice" formControlName="costPrice"
+                [status]="productForm.controls.costPrice.touched? (productForm.controls.costPrice.errors ?'danger' : 'basic') : 'basic' ">
+
+              <input type="number" nbInput placeholder="Preço de Venda" name="salePrice" formControlName="salePrice"
+                [status]="productForm.controls.salePrice.touched? (productForm.controls.salePrice.errors ?'danger' : 'basic') : 'basic' ">
+
+            </div>
+          </div>
+
+          <input type="number" nbInput placeholder="Estoque Atual" name="currentInventory"
+            formControlName="currentInventory">
+
+          <textarea rows="5" nbInput fullWidth placeholder="Observações" name="observation"
+            formControlName="observation"></textarea>
+
+
+
+        </form>
+
+        <button nbButton status="success" [disabled]="!productForm.valid" (click)="insert()"> Salvar</button>
+        <button nbButton status="danger" (click)="cancel()"> Cancelar</button>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
